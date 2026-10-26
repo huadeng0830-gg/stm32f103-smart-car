@@ -2,7 +2,7 @@
 #define __CAR_H
 
 void Stop(void);
-void AllBackward(void);
+void AllForward(void);
 
 void AllForward_Speed1(void);
 void AllForward_Speed2(void);
