@@ -1,0 +1,40 @@
+# Keil generated output and local UI/debug settings
+Objects/
+Listings/
+DebugConfig/
+*.uvguix.*
+*.uvoptx
+*.uvgui.*
+*.uvopt
+*.bak
+*.o
+*.obj
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.crf
+*.d
+*.dep
+*.iex
+*.lnp
+*.sct
+*.build_log.htm
+*.scvd
+*.htm
+*.log
+
+# Editor and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+__pycache__/
+
+# Local secrets
+.env
+.env.*
+*.key
+*.pem
