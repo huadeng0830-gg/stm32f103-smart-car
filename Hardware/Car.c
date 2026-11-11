@@ -5,12 +5,16 @@
 #include "OLED.h"
 #include "Car.h"
 
+void duty(uint16_t SetDuty)			//同速度占空比设置
+{
+	PWM_SetCompare1(SetDuty);
+	PWM_SetCompare2(SetDuty);
+	PWM_SetCompare3(SetDuty);
+	PWM_SetCompare4(SetDuty);
+}
 void Stop(void)
 {
-	PWM_SetCompare1(0);
-	PWM_SetCompare2(0);
-	PWM_SetCompare3(0);
-	PWM_SetCompare4(0);
+	duty(0);
 }
 
 void Forwardspeed(uint16_t right, uint16_t left)
@@ -49,10 +53,7 @@ void AllBackward(void)
 	Motor_M2_Backward();
     Motor_M3_Backward();
 	Motor_M4_Backward();
-    PWM_SetCompare1(50); 
-	PWM_SetCompare2(50);
-    PWM_SetCompare3(50);
-	PWM_SetCompare4(50);
+    duty(50);
 }
 
 void Rightturn(void)
@@ -63,4 +64,40 @@ void Rightturn(void)
 void Leftturn(void)
 {
 	Forwardspeed(70, 40);
+}
+
+void SL(void)			//左移
+{
+	Motor_M1_Forward();
+	Motor_M2_Backward();
+	Motor_M3_Backward();
+	Motor_M4_Forward();
+	duty(50);
+}
+
+void SR(void)			//右移
+{
+	Motor_M1_Backward();
+	Motor_M2_Forward();
+	Motor_M3_Forward();
+	Motor_M4_Backward();
+	duty(50);
+}
+
+void IPL(void)			//原地左旋（逆时针）
+{
+	Motor_M1_Forward();
+	Motor_M2_Forward();
+	Motor_M3_Backward();
+	Motor_M4_Backward();
+	duty(50);
+}
+
+void IPR(void)			//原地右旋（顺时针）
+{
+	Motor_M1_Backward();
+	Motor_M2_Backward();
+	Motor_M3_Forward();
+	Motor_M4_Forward();
+	duty(50);
 }

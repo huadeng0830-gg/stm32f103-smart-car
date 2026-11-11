@@ -1,5 +1,18 @@
 # 公开整理验证记录
 
+## 2026-11-11 横移与原地旋转
+
+使用 ARM Compiler 5.06 update 5 build 528，对 `Project.uvprojx` 的 `Target 1` 执行完整 Rebuild，进程退出码为 0。
+
+```text
+Program Size: Code=4620 RO-data=1788 RW-data=20 ZI-data=1636
+".\Objects\Project.axf" - 0 Error(s), 0 Warning(s).
+```
+
+GCC 主机测试执行真实主循环和整车动作函数，11 个有效指令的 PWM、轮向和 OLED 输出断言通过。连续切换、重复旋转、无效字符及停车也通过检查。测试命令见 [测试说明](TESTING.md)。
+
+横移、原地旋转及蓝牙联调待实车验证。
+
 ## 2026-11-07 蓝牙遥控版本
 
 用 Keil µVision 和 ARM Compiler 5.06 update 5 build 528 对 `Project.uvprojx` 的 `Target 1` 执行完整 Rebuild。进程退出码为 0。

@@ -20,7 +20,7 @@ int main(void)
     {
 		if (HC05_ReceiveData(&Command))
 		{
-			/* Send single ASCII characters: 1/2/3, B, L, R, S. */
+			/* Send single ASCII characters: 1/2/3, B, L/R, A/D, Q/E, S. */
 			switch (Command)
 			{
 				case '1':
@@ -46,6 +46,26 @@ int main(void)
 				case 'R':
 					Rightturn();
 					Direction = "RIGHT   ";
+					break;
+				case 'A':
+					Stop();
+					SL();
+					Direction = "SLIDE_L ";
+					break;
+				case 'D':
+					Stop();
+					SR();
+					Direction = "SLIDE_R ";
+					break;
+				case 'Q':
+					Stop();
+					IPL();
+					Direction = "CCW     ";
+					break;
+				case 'E':
+					Stop();
+					IPR();
+					Direction = "CW      ";
 					break;
 				case 'S':
 					Stop();
