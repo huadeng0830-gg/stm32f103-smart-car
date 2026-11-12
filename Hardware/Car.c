@@ -5,7 +5,7 @@
 #include "OLED.h"
 #include "Car.h"
 
-void duty(uint16_t right, uint16_t left)			//同速度占空比设置
+void duty(uint16_t right, uint16_t left)			//左右轮速度占空比设置
 {
 	PWM_SetCompare1(right);//右前轮速度
 	PWM_SetCompare2(right);//右后轮速度
