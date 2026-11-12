@@ -2,7 +2,7 @@
 #define __CAR_H
 
 
-void duty(uint16_t right, uint16_t left);									//同速度占空比设置
+void duty(uint16_t right, uint16_t left);									//左右轮速度占空比设置
 
 void Stop(void);												//停止
 
